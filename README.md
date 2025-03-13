@@ -7,11 +7,28 @@ This repository contains my personal dotfiles managed with GNU Stow.
 Clone this repository:
 
 ```bash
-git clone <repository-url> ~/dotfiles
+git clone https://github.com/PandArrays/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
-## Available Configurations
+## Automatic Setup
+
+The easiest way to set up all configurations is to use the provided setup script:
+
+```bash
+cd ~/dotfiles
+chmod +x setup.sh
+./setup.sh
+```
+
+This will :
+- Check if GNU Stow is installed
+- Set up all dotfiles configurations
+- Source the tmux configuration if tmux is running
+
+## Manual Configuration
+
+If you prefer to set up configurations individually:
 
 ### Tmux
 
@@ -22,8 +39,6 @@ cd ~/dotfiles
 stow tmux
 tmux source ~/.tmux.conf
 ```
-
-This will create symlinks for the tmux configuration files and reload the configuration.
 
 ## Requirements
 
