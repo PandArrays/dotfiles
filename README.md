@@ -38,6 +38,7 @@ chmod +x setup.sh
 
 This will:
 - Check if GNU Stow is installed
+- Create necessary directories (~/.tmux/plugins, ~/.config/tmux)
 - Install TPM (Tmux Plugin Manager) if needed
 - Install Catppuccin theme for tmux if needed
 - Set up all dotfiles configurations
@@ -52,11 +53,14 @@ If you prefer to set up configurations individually:
 To set up tmux configuration:
 
 ```bash
+# Create necessary directories
+mkdir -p ~/.tmux/plugins
+mkdir -p ~/.config/tmux/plugins/catppuccin
+
 # First, install TPM (Tmux Plugin Manager)
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Next, install the Catppuccin theme
-mkdir -p ~/.config/tmux/plugins/catppuccin
 git clone -b v2.1.2 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
 
 # Then apply the configuration

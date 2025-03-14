@@ -20,6 +20,11 @@ if ! command -v stow &> /dev/null; then
     exit 1
 fi
 
+# Create required directories
+echo "Creating required directories..."
+mkdir -p ~/.tmux/plugins
+mkdir -p ~/.config/tmux/plugins/catppuccin
+
 # Install TPM (Tmux Plugin Manager) if not already installed
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
     echo "Installing TPM (Tmux Plugin Manager)..."
@@ -32,7 +37,6 @@ fi
 # Install Catppuccin theme for tmux if not already installed
 if [ ! -d "$HOME/.config/tmux/plugins/catppuccin/tmux" ]; then
     echo "Installing Catppuccin theme for tmux..."
-    mkdir -p ~/.config/tmux/plugins/catppuccin
     git clone -b v2.1.2 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
     echo "Catppuccin theme installed successfully!"
 else
